@@ -3,7 +3,7 @@ import urllib2, urllib
 # goto: https://www.mashape.com
 # you need to create a Mashape account insert your key
 # if you do not do this the script will fail
-mashapeAuthorization = "eUXi62gJ1lmshCYLXQ1KHj5gLuKlp1uHCecjsnoAwkYR0lv9XW"
+mashapeAuthorization = "YOUR-KEY-GOES-HERE"
 
 def getSpeech(sentence):
 	str = urllib.quote(sentence)
@@ -18,8 +18,10 @@ def getSpeech(sentence):
 def main() :
 	sentence=(raw_input("Ask me anything Young Padawan: "))
 	if len(sentence) is 0:
-   		print "Please ask something"
-   	getSpeech(sentence)
+		print "Please ask something"
+		main()
+	getSpeech(sentence)
+	exit()
 
 if __name__ == '__main__':
 	main()
